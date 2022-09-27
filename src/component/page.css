@@ -4,12 +4,30 @@
     display: grid;
     grid-template-columns: 30vw 70vw;
 }
+.right-only{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #D8D8D8;
+}
+.right-only h1 {
+    width: 100%;
+    font-size: 1.22rem;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    background-color: rgb(44, 44, 226);
+    color: white;
+    padding: .5rem;
+    border-radius: .2rem;
+}
+
 @media screen and (max-width:800px) {
     .main-content {
         width: 100vw;
         display: grid;
-        grid-template-columns: auto auto;
-        background-color: aqua;
+        grid-template-columns: 40vw 60vw;
     }
 }
 @media screen and (max-width:300px) {
@@ -17,7 +35,9 @@
         width: 100vw;
         display: grid;
         grid-template-columns: auto;
-        background-color: aqua;
+
+        justify-content: center;
+        
     }
 }
 
@@ -43,21 +63,17 @@
     margin-top: 2rem;
     border: .6rem solid white;
     border-radius: 5rem;
-    top: 0;
+    
 }
 .right {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #D8D8D8;
+  
+    
 }
-.right input {
-    width: 70%;
-    padding: 12px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-}
+
 .right h1 {
     width: 100%;
     font-size: 1.22rem;

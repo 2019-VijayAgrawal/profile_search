@@ -3,7 +3,7 @@ import "./page.css";
 
 const Page = () => {
   // const{email,first_name,last_name,avatar} = props.users;
-  const [id, setId] = useState();
+  const [id, setId] = useState("");
   const [list, setList] = useState([]);
   const [loading, setLaoding] = useState(false);
   const [error, setError] = useState(false);
@@ -24,11 +24,10 @@ const Page = () => {
           setList(result.data);
           setError(false);
           setLaoding(false);
-          console.log(result);
+          //console.log(result);
         });
       })
       .catch((err) => {
-        console.log(err.message);
         setError(true);
         setLaoding(true);
         setMessage(err.message);
@@ -40,7 +39,8 @@ const Page = () => {
       <div className="main-content">
         {click ? (
           error && loading ? (
-            <div className="right">
+            <div className="right-only">
+            <h1>Search User Profile</h1>
               <input
                 type="number"
                 value={id}
@@ -51,14 +51,17 @@ const Page = () => {
                     setId("");
                   }
                 }}
+                required
               />
-
+              <br/>
               <button disabled={!id} onClick={handler}>
                 Submit
               </button>
               <h3 style={{ color: "red", marginTop: "7rem" }}>{msg}</h3>
             </div>
-          ) : (
+          )
+           :
+            (
             <div className="main-content">
               <div className="left">
                 <img src={list.avatar} alt="profile_pic" />
@@ -95,7 +98,7 @@ const Page = () => {
                 }
                   }}
                 />
-
+                   <br/>
                 <button disabled={!id} onClick={handler}>
                   Submit
                 </button>
@@ -103,7 +106,7 @@ const Page = () => {
             </div>
           )
         ) : (
-          <div className="right">
+          <div className="right-only">
             <h1>Search User Profile</h1>
             <input
               type="number"
@@ -116,7 +119,7 @@ const Page = () => {
                 }
               }}
             />
-
+             <br/>
             <button disabled={!id} onClick={handler}>
               Submit
             </button>

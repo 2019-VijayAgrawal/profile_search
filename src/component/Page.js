@@ -68,13 +68,13 @@ const Page = () => {
 
                 <div className="line"></div>
                 <h2 style={{ color: "yellow" }}>Name </h2>
-                <h3>
+                <h4>
                   {list.first_name} {list.last_name}
-                </h3>
+                </h4>
                 <div className="line"></div>
                 <br />
                 <h2 style={{ color: "yellow" }}>Email</h2>
-                <h4> {list.email}</h4>
+                <p> {list.email}</p>
                 <div className="line"></div>
                 <h2 style={{ color: "yellow" }}>Description :</h2>
                 <p>
